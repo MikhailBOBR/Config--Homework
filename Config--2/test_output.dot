@@ -1,0 +1,6 @@
+// Test Graph
+digraph {
+	A
+	B
+	A -> B
+}

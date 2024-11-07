@@ -1,0 +1,6 @@
+[settings]
+graphviz_path = "C:/Program Files/Graphviz/bin/dot.exe"  # используйте прямые слэши или двойные обратные
+package_name = "your-package-name"
+output_path = "dependencies_graph.png"
+max_depth = 3
+repository_url = "https://registry.npmjs.org"

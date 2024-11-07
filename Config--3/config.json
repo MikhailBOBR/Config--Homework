@@ -1,0 +1,10 @@
+{
+    "_Const1": 100,
+    "_Const2": "Example string",
+    "Array1": [1, 2, 3, 4],
+    "Expression1": { "$": ["+", "_Const1", 50] },
+    "NestedArray": [
+        ["nested1", 10],
+        ["nested2", 20]
+    ]
+}
