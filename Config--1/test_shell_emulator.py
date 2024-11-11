@@ -14,7 +14,6 @@ def create_test_zip():
 
 # Тесты для ls
 def test_ls():
-    global successful_tests, total_tests
     zip_archive = create_test_zip()
     current_directory = ''
 
@@ -31,12 +30,9 @@ def test_ls():
 
 # Тесты для cd
 def test_cd():
-    global successful_tests, total_tests
     zip_archive = create_test_zip()
     current_directory = ''
 
-    # Переход в подкаталог dir1
-    total_tests += 1
     new_directory = cd(zip_archive, current_directory, 'dir1')
     assert new_directory == 'dir1', "Ошибка: переход в подкаталог dir1 не выполнен корректно"
     print("Тест cd - переход в подкаталог dir1 прошел успешно")
@@ -50,7 +46,6 @@ def test_cd():
 
 # Тесты для rm
 def test_rm():
-    global successful_tests, total_tests
     zip_archive = create_test_zip()
     current_directory = ''
 
@@ -72,7 +67,6 @@ def test_rm():
 
 # Тесты для rev
 def test_rev():
-    global successful_tests, total_tests
     zip_archive = create_test_zip()
     current_directory = ''
 
