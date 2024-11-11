@@ -1,13 +1,8 @@
-import json
 import zipfile
 import posixpath
 import io
 import os
-
-def load_config():
-    with open("config.json", "r") as config_file:
-        config = json.load(config_file)
-    return config["name"], config["path"]
+import argparse
 
 def ls(zip_archive, current_directory):
     entries = set()
@@ -77,7 +72,14 @@ def exit_shell(zip_archive):
     exit()
 
 def main():
-    computer_name, zip_path = load_config()
+    parser = argparse.ArgumentParser(description="Virtual File System Shell")
+    parser.add_argument("name", help="Set computer name for prompt display")
+    parser.add_argument("path", help="Set path to the virtual file system archive")
+    args = parser.parse_args()
+
+    computer_name = args.name
+    zip_path = args.path
+
     if not os.path.exists(zip_path):
         print(f"Ошибка: файл {zip_path} не найден.")
         return
@@ -93,6 +95,7 @@ def main():
         if not command_parts:
             continue
         command, *args = command_parts
+
 
         if command == 'exit':
             exit_shell(zip_archive)
@@ -115,3 +118,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+#python shell_emulator.py MyComputer vfs_root.zip
