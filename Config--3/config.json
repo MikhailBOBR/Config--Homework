@@ -1,10 +1,18 @@
 {
-    "_Const1": 100,
-    "_Const2": "Example string",
-    "Array1": [1, 2, 3, 4],
-    "Expression1": { "$": ["+", "_Const1", 50] },
-    "NestedArray": [
-        ["nested1", 10],
-        ["nested2", 20]
-    ]
+  "NUMBER1": 10,
+  "NUMBER2": 20,
+  "SUM": "${+ NUMBER1 NUMBER2}",
+  "DIFFERENCE": "${- NUMBER2 NUMBER1}",
+  "PRODUCT": "${* NUMBER1 NUMBER2}",
+  "QUOTIENT": "${/ NUMBER2 NUMBER1}",
+  "GREETING": "Hello",
+  "TARGET": "World",
+  "FULL_GREETING": "${concat [[GREETING]] [[ ]] [[TARGET]]}",
+  "FIRST_CHAR_CODE": "${ord [[A]]}",
+  "ARRAY": [
+      "Item1",
+      "${+ NUMBER1 5}",
+      "${concat [[Hello]] [[ ]] [[World]]}",
+      "${ord [[B]]}"
+  ]
 }

@@ -1,0 +1,1 @@
+{"DeepNestedArray": [1, ["${+ 1 1}", 2, ["${* 2 2}", "${concat [[Deep]] [[ ]] [[Nest]]}"]], 3]}
